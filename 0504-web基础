@@ -101,6 +101,17 @@ c.端口
 	f.数据库服务器把响应数据发回给web服务器
 	g.web服务器整合资源后发回给浏览器
 
+4.svn的使用
+	a.下载安装
+		https://tortoisesvn.net/downloads.html
+	b.下载文件
+		b1.拖拽
+			桌面--右键--小乌龟--repo browser--输入svn地址(http://192.168.4.148:81/svn/0504)--输入用户名(test)--输入密码(test)--拖拽
+		b2.新建目录操作
+			新建文件夹--右键--svn checkout--输入您要下载的文件夹
+	c.上传文件
+		c1.拖拽
+			桌面--右键--小乌龟--repo browser--输入svn地址(http://192.168.4.148:81/svn/0504)--输入用户名(test)--输入密码(test)--拖拽
 
 
 
