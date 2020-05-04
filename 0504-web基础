@@ -86,6 +86,12 @@ c.端口
 			服务器软件版本
 			时间
 		c5.响应体
+	d.fiddler的断点调试
+		bpu http://ecshop.test1.shopex123.com/   断点设置伪响应
+		bpu 取消断点调试
+		bpu http://ecshop.test1.shopex123.com/user.php 断点设置伪请求
+		bpu
+
 
 
 
