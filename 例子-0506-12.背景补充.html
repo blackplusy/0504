@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 600px;
+			height: 600px;
+			/*越在前面的图片会越往后绘制*/
+			/*background-image的层级一定高于background-color*/
+			background-image: url(5kong.jpg),url(nezha.jpg);
+			background-repeat: no-repeat;
+			/*两张图片的大小*/
+			background-size: 100px 100px,200px 200px;
+
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
