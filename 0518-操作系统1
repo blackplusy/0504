@@ -113,5 +113,40 @@ tel:18028768679
 		win: 	win+r--cmd--ping linux的IP
 		linux:  打开终端--ping windows的IP
 
-
+7.目录
+	a.创建目录
+		mkdir a
+			当前目录下创建空目录a
+		mkdir b /opt/c
+			当前目录下创建空目录b同时在/opt目录下创建空目录c
+		mkdir "d  e"
+			当前目录下创建空目录d  e
+		mkdir -p f/g/h
+			当前目录下创建级联目录f/g/h
+		tree
+			树状显示目录结构
+	b.删除目录
+		rmdir
+		rm -r a
+			删除当前目录下的a目录
+		rm -rf c
+			强制删除当前目录下的c目录
+	c.复制目录
+		 cp -r f b
+		 	复制f目录到当前目录下的b目录中(b目录存在)
+		 cp -r f g
+		 	复制f目录到当前目录下并且命名为g(g目录不存在)
+	d.移动(剪切)目录
+		mv g a
+			剪切g目录到a目录中(a目录存在)
+		mv d b
+			重命名当前目录下的d目录为b(b目录不存在)
+	/opt
+	+-----A
+	|     +---a1
+	|     +---a2
+	|   
+	+-----B
+		  +---C
+		  +---D
 
