@@ -224,6 +224,33 @@ tree
 		cat /etc/passwd | grep ^r 搜索/etc/passwd文件中以r开头的内容
 		head -7 install.log|tail -1 搜索install.log第7行内容
 
+7.linux下的软件安装
+	a.软件基础
+		rhel的软件通常在光盘的Server目录下(版本较低，稳定)
+		如果需要最新版本软件，需要到软件官网下载
+		rhel的软件安装包都是以.rpm结尾
+		mount中type是iso9660说明该设备是光盘、光驱等
+	b.安装vsftpd服务
+		1>安装操作系统
+		2>设置IP、主机名、绑定主机名
+		3>关闭防火墙、关闭selinux
+		4>加载光驱
+			右键标签--设置--cd\dvd--[已连接、启动时链接打勾]使用iso映像文件--找到安装光盘--确定
+		5>输入mount命令(查看系统挂在情况)，查找type是iso9660的对应目录
+			mount |grep iso9960
+		6>进入到已经搜索到的目录下的Server目录
+			 cd /media/RHEL_5.4\ i386\ DVD/Server/
+		7>查找vsftpd相关软件
+			ls | grep vsftpd
+		8>安装vsftpd软件包
+			rpm -ivh 软件包
+			rpm -ivh vsftpd-2.0.5-16.el5.i386.rpm
+		9>启动vsftpd的服务
+			service vsftpd start
+		10>测试
+			浏览器中输入ftp://linux的IP，如果看看到pub目录的话说明安装完成
+			如果需要共享文件，把需要共享的文件复制到linux的/var/ftp下面
+
 
 
 
