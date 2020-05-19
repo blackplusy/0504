@@ -1,0 +1,74 @@
+复习:
+who
+whoami
+pwd
+cd
+ls
+ifconfig
+setup
+service
+ping
+mkdir
+cp
+mv
+rmdir
+touch
+echo
+cat
+less
+more
+head
+tail
+vi
+tree
+1.查看帮助
+	a.man 		官方手册
+	b.info 		说明文档
+	c.--help    常见参数
+2.操作系统基本配置
+	a.配置IP地址
+		1>通过命令配置(setup)
+		2>临时配置(重启网络后失效)
+			ifconfig eth0 10.10.101.3
+		3>修改配置文件配置(永久修改)(重启网络后生效)
+			vim /etc/sysconfig/network-scripts/ifcfg-eth0
+			DEVICE=eth0                   设备名称
+			BOOTPROTO=static              获取IP地址的方式(dhcp 动态分配IP地址,static 静态设置)
+			ONBOOT=yes                    网卡是否随开机启动而启动(yes是，no否)
+			HWADDR=00:0c:29:c3:e5:89      网卡的mac地址
+			NETMASK=255.255.254.0         子网掩码
+			IPADDR=192.168.4.144          IP地址
+			TYPE=Ethernet                 上网类型
+	b.设置主机名
+		FQDN(完全合格域名)
+		heygor.test.com
+		aa.heygor.cn
+		1>临时设置主机名(重启系统后失效)
+			hostname heygor.gaga.com
+		2>永久设置主机名(重启系统后生效)
+			vim /etc/sysconfig/network
+			HOSTNAME=heygor.java.com
+		3>查看主机名
+			hostname
+	c.绑定主机名
+		vim /etc/hosts
+		192.168.4.144   heygor.java.com
+	d.selinux(关闭)
+		1>查看selinux状态
+			getenforce
+		2>修改selinux的配置
+			vim /etc/selinux/config
+			SELINUX=disabled
+		3>临时设置selinux状态
+			setenforce 0 (临时关闭selinux)
+	e.防火墙(关闭)
+		1>查看防火墙的状态
+			service iptables status
+		2>启动防火墙
+			service iptables start
+		3>关闭防火墙
+			service iptables stop
+
+
+
+
