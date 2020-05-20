@@ -153,7 +153,7 @@ rpm
 		/opt下创建一个空目录data
 			mkdir /opt/data
 		启动命令	
-			mongodb --dbpath /opt/data --logpath /opt/data/mongo.log --fork
+			mongod --dbpath /opt/data --logpath /opt/data/mongo.log --fork
 			dbpath 	数据库的数据存放的路径(目录)
 			logpath 日志文件存放的位置(文件)
 			fork    后台运行
