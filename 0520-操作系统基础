@@ -1,0 +1,140 @@
+who
+whoami
+pwd
+ls
+cd
+man
+info
+setup
+ping
+ifconfig
+service
+mkdir
+rmdir
+cp
+mv
+touch
+echo
+cat
+less
+more
+head
+tail
+vi
+hostname
+tar
+gzip
+useradd
+passwd
+usermod
+usedel
+top
+ps
+netstat
+vmstat
+free
+df
+mount
+rpm 
+=====================================
+1.软件安装方式
+	a.手动安装(rpm安装)
+	b.自动安装(yum安装)
+	c.二进制文件安装
+	d.源码安装
+
+2.自动安装
+	a.安装配置yum
+		1>创建一个空目录用于挂载
+			mkdir /yum
+		2>加载光驱
+			右键标签--设置--cd、dvd--[已连接、启动时链接]--使用iso映像文件--确定
+		3>挂载光驱到刚才创建好的目录下
+			mount -o loop /dev/scd0 /yum
+			注意:光盘类型挂载必须加 -o loop 参数
+		4>配置yum
+			cd /etc/yum.repos.d/
+			vim rhel-debuginfo.repo
+			[rhel-debuginfo]                分组名字
+			name=test                       名字
+			baseurl=file:///yum/Server      自动安装到哪里去找软件包
+			enabled=1                       是否开启自动安装，1开启 0关闭
+			gpgcheck=0                      是否检查光盘包，0不检查，1检查
+		5>清理yum缓存
+			yum clean all
+		6>查看可以安装软件的列表
+			yum list 
+		7>安装mysql服务
+			yum install mysql* -y
+		8>启动mysql服务
+			service mysqld start
+		9>检查进程和端口
+			ps -ef |grep mysqld
+			netstat -an | grep 3306
+		补充：
+			127.0.0.1==localhost==电脑本机
+			0.0.0.0  任意IP地址
+	b.安装部署ecshop网店项目
+		1>准备工作
+			开发语言:php
+			web服务器：apache
+			数据库服务器:mysqld
+		2>常见的网站后台架构
+			操作系统
+				unix
+				linux
+				windows
+			web服务器
+				apache  不支持java
+				tomcat  java
+				iis     微软
+				nginx   负载均衡、反向代理、轻量级
+			数据库服务器
+				oracle  中大型
+				mysql   互联网公司
+				sqlserver  传统行业
+			常见搭配
+				操作系统       web服务器     数据库服务器
+				  win            iis         sqlserver
+				                apache       mysql
+				                tomcat       oracle\mysql
+				 linux          apache       mysql             (LAMP)
+				 			    nginx        mysql             (LNMP)
+				 			    tomcat       oracle/mysql
+		3>安装配置好yum
+		4>安装php相关软件
+			yum install php* -y
+		5>安装apache相关软件
+			yum install http* -y
+		6>安装mysql相关软件
+			yum install mysql* -y
+		7>启动mysqld服务
+			service mysqld start
+		8>启动apache服务
+			service httpd start
+		9>测试
+			ps -ef |grep httpd
+			ps -ef |grep mysqld
+			netstat -an |grep 3306
+			netstat -an |grep 80
+		10>在win下解压ecshop压缩包
+		11>把ecshop1文件夹通过winscp传入linux中的/var/www/html下
+		12>修改目录权限
+			chmod 777 -R /var/www/html/ecshop1
+		13>浏览器中输入
+			linux的ip/ecshop1按照提示安装
+			注意:
+			数据库主机:localhost
+			端口号：3306
+			用户名:root
+			密码：空
+			数据库名:test
+
+
+
+
+
+
+
+
+
