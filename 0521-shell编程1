@@ -146,4 +146,51 @@ l.条件判断
 3.循环控制
 	continue 继续，停止执行本次循环，直接进行下一次循环
 	break    打断，马上停止本次循环，并且退出整个循环，循环体后面什么代码都不执行
+4.case
+	打印菜单，使用case做出选择
+5.数组
+	数组没有类型的，里面的元素也可以是任意类型的
+	第一种定义方式：
+	a=( var1 var2 var3)
+	[root@localhost ~]# a=(1 2 3 a b c)
+	[root@localhost ~]# echo ${a[0]}
+	1
+	[root@localhost ~]# echo ${a[3]}
+	a
+	[root@localhost ~]# echo ${a[7]}
+
+	[root@localhost ~]#
+	第二种
+	array_name[xx]=value #xx只能是数字
+	[root@localhost ~]# b[1]="hi jack"
+	[root@localhost ~]# b[0]="com on"
+	[root@localhost ~]# b[5]="baby"
+	[root@localhost ~]# echo ${b}
+	com on
+	[root@localhost ~]# echo ${b[0]}
+	com on
+	[root@localhost ~]# echo ${b[1]}
+	hi jack
+	[root@localhost ~]# echo ${b[5]}
+	baby
+	第三种:
+	array_name=([1]=xxx [2]=yyy [3]=12345)
+	获取数组的元素个数
+	echo ${#a[*]}
+	输出所有元素
+	echo ${a[*]}
+	echo ${a[@]}
+6.函数
+定义方式：
+function_name () {
+	命令
+	命令
+}
+
+function func_name ()
+{
+	命令
+	命令
+} 
+
 
