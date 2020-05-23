@@ -90,8 +90,73 @@ e.安全测试      50w
 	bpu http://www.changhongtech.com
 	取消断点调试
 	bpu
-
 	bpu http://www.changhongtech.com/user.php
+5.windows下环境的部署
+	b/s架构的后端
+		操作系统
+			unix
+			linux
+			windows
+		web服务器
+			apache
+			nginx
+			iis
+			tomcat
+		数据库服务器
+			oracle
+			mysql
+			sqlserver
+	常见搭配
+		操作系统   web服务器  数据库服务器
+		win        apache     mysql
+		            iis       sqlserver
+	1.集成工具
+		xampp
+			x:任意操作系统
+			a:apache
+			m:mysql
+			p:php
+			p:perl
+		wamp
+			w:windows
+		phpstudy
+	2.phpstudy简介
+		a.安装：傻瓜安装
+		b.文件夹简介
+			apache  	web服务器
+				bin     存放apache命令
+				conf 	存放配置文件
+				logs    存放日志文件
+				httpd.conf apache的主配置文件
+			mysql       数据库服务器
+				bin     存放mysql命令
+				data    存放数据位置
+				my.ini  mysql的配置文件
+			WWW         项目代码部署位置
+		c.启动软件服务
+			c1.检查服务
+				mysql的服务   mysqld
+				apache的服务  httpd
+				win+r--cmd--tasklist | find "mysqld"
+			c2.检查端口
+				apache  80
+				mysql   3306
+				win+r--cmd--netstat -an | find "3306"
+		d.安装部署ecshop
+			d1.解压ecshop压缩包
+			d2.把解压后的文件夹复制到WWW文件夹中
+			d3.浏览器中输入 127.0.0.1/ecshop1根据提示进行安装
+					第三步时候注意:
+					数据库主机：localhost
+					端口号    :3306
+					用户名    :root
+					密码      :root
+					数据库名  :test
+
+
+
+
+
 
 
 
