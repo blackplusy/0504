@@ -31,5 +31,67 @@ e.安全测试      50w
 			c:客户端
 			s:服务器
 			测试关注点:不同操作系统、不同位数的安装与反安装(软件捆绑)和兼容性问题
+2.我们是怎样访问网站(访问网站过程)
+	1.打开浏览器输入www.sina.com.cn
+	2.系统会到hosts文件中去搜索是否有www.sina.com.cn对应的IP地址，如果有，直接访问
+	3.如果没有的话，数据通过网络传输到DNS(域名解析)服务器，把域名解析为IP
+	4.数据通过网络发送到目标IP地址的web服务器上
+	5.web服务器对发送过来的数据进行解析，发送请求给数据库
+	6.数据库处理后把数据发回给web服务器进行整合
+	7.数据通过网络传回浏览器
+3.URL(统一资源定位器)
+	URL的组成
+	http://www.changhongtech.com:80/goods/category.php?id=73
+	a.协议
+		http协议
+			规定了数据在传输过程中，先传输什么后传输什么，怎样传输
+		超文本传输协议
+			超文本【富文本】(声音、图像、视频)
+			普通文本
+		http协议特点
+			无状态
+		http协议的请求
+			get 请求信息显示在URL上，相对不安全(内容写在信封)
+				https://s.taobao.com/search?q=lv&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20200523&ie=utf8
+				https://s.taobao.com/search?q=zara&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20200523&ie=utf8
+			post 请求信息显示在请求体上，相对安全(内容写在信纸上)
+		cookie&session
+			cookie 存放在客户端 验证机制，访问记录
+			session 存放在服务端 验证机制
+		状态码
+			200   请求成功
+			302   缓存
+			404   客户端请求有问题
+			500   服务端有问题
+	b.域名
+		FQDN(完全合格域名)
+		DNS(域名解析服务器)
+		域名解析2类
+		1>正向解析
+			域名--IP
+			win+r--cmd--nslookup www.baidu.com
+		2>反向解析
+			IP--域名
+			win+r--cmd--nslookup 14.215.177.39
+	c.端口
+		区分应用层进程的标识
+		apache    80
+		tomcat    8080
+		oracle    1521
+		m7sql      3306
+		查看端口信息
+		win+r--cmd--netstat -an | find "135"
+	d.虚拟目录
+	e.文件名
+	f.访问文件参数
+4.抓包
+	fiddler(需要.net 4.0)
+	断点调试(bpu)
+	bpu http://www.changhongtech.com
+	取消断点调试
+	bpu
+
+	bpu http://www.changhongtech.com/user.php
+
 
 
