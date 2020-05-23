@@ -152,6 +152,27 @@ e.安全测试      50w
 					用户名    :root
 					密码      :root
 					数据库名  :test
+	3.jdk的安装和配置
+		a.下载(oracle)
+			a1.对应操作系统
+			a2.对应位数
+		b.解压下载好的压缩包
+		c.设置环境变量
+			计算机--属性--高级--环境变量--系统变量
+			c1.新建变量JAVA_HOME值是jdk挤压后的文件夹
+				JAVA_HOME
+				C:\Users\Administrator\Downloads\jdk-14.0.1_windows-x64_bin\jdk-14.0.1
+			c2.Path中添加jdk的bin文件夹
+				;C:\Users\Administrator\Downloads\jdk-14.0.1_windows-x64_bin\jdk-14.0.1\bin
+			c3.注意
+				如果是早期版本会分jdk和jre
+					jdk java的开发环境
+					jre java的运行环境
+				早期版本会把jre的bin文件夹也加入到Path中
+
+
+
+
 
 
 
